@@ -1,0 +1,28 @@
+/* .outer_div {
+  border: 1px solid #ebebeb;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.brands_image {
+  width: 120px;
+  padding: 15px 15px;
+}
+.inner_div {
+  padding: 15px 25px;
+}
+.slider_main_div {
+  margin: 20px 0px;
+} */
+.sub_title_category {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+.brand_title_category {
+  margin: 25px 0px;
+  text-align: left;
+}
+.catagory_main_div {
+  margin-top: 50px;
+  position: relative;
+}
