@@ -24,6 +24,7 @@ const Product = () => {
   useEffect(() => {
     return () => {
       getProductData();
+      console.log("jhy");
       console.log(pathchecked, "ii api call");
     };
   }, [pathchecked]);
