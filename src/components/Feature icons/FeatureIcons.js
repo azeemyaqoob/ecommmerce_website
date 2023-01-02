@@ -1,12 +1,12 @@
 import React from "react";
-
 import arrowRight from "./../../Assets/arrowRight.svg";
 import arrowLeft from "./../../Assets/arrowLeft.svg";
 import Slider from "react-slick";
-import "./Style.css";
+import "./FeatureIconsStyle.css";
 
-const Brandslider = (props) => {
-  //   console.log(props, " received");
+const FeatureIcons = (props) => {
+  // console.log(props, "featureicons");
+
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <button
       {...props}
@@ -37,31 +37,29 @@ const Brandslider = (props) => {
 
   const settings = {
     dots: false,
-    autoplay: true,
+    autoplay: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     arrows: true,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
   };
-
   return (
     <div className="main_div">
-      <div className="brands">
-        <div className="brand_title">
-          <h1>{props?.data?.title}</h1>
-        </div>
+      <h6 className="features_head_title">{props.data.title}</h6>
+      <div>
         <Slider {...settings}>
-          {props?.data?.brands?.map((brandslider, index) => (
-            <div key={index}>
-              <div className="brand_section_top">
+          {props.data.features.map((featuresdata, index) => (
+            <div key={index} className="feature_main_div">
+              <div className="feature_image">
                 <img
-                  src={brandslider?.logo}
-                  className="brands_image"
-                  alt={brandslider?.handle}
+                  src={featuresdata?.icon_img}
+                  className="features_image"
+                  title={featuresdata?.title}
                 />
+                <p className="title_feature">{featuresdata?.title} </p>
               </div>
             </div>
           ))}
@@ -71,4 +69,4 @@ const Brandslider = (props) => {
   );
 };
 
-export default Brandslider;
+export default FeatureIcons;

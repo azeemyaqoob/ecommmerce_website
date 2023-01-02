@@ -2,7 +2,7 @@ import React from "react";
 import "./Style.css";
 const TwoBanner = (props) => {
   return (
-    <>
+    <div className="main_div">
       <div className="main">
         <div className="child">
           <img
@@ -19,7 +19,7 @@ const TwoBanner = (props) => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

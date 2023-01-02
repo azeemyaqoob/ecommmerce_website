@@ -1,0 +1,88 @@
+.main_footer_div {
+  background-color: #2e2e2d;
+  padding-top: 4%;
+  padding-left: 7%;
+  padding-right: 7%;
+  display: flex;
+  width: 100%;
+  color: azure;
+
+  .contact_info_footer {
+    color: azure;
+  }
+
+  .support_image {
+    width: 100%;
+    background-color: aliceblue;
+  }
+  .contact_phone {
+    color: azure;
+    margin-left: 25%;
+  }
+  .email_placeholder {
+    display: flex;
+    position: relative;
+    padding-top: 5px;
+    input {
+      border: none;
+      padding: 15px;
+      width: 100%;
+      border-radius: 6px;
+    }
+    button {
+      position: absolute;
+      border: none;
+      right: 9px;
+      top: 11px;
+      background-color: rgb(255, 174, 0);
+      height: 40px;
+      color: white;
+    }
+  }
+
+  .button_email {
+  }
+  .subscribe_us {
+    color: aliceblue;
+  }
+  .inputemail {
+  }
+  .footer_colour {
+    color: aliceblue;
+    display: flex;
+    flex: row;
+    padding-left: 30px;
+  }
+  p {
+    font-size: small;
+    color: aliceblue;
+  }
+  .email_pic {
+    width: 20px;
+  }
+  i {
+    color: aliceblue;
+  }
+}
+.logokees {
+  width: 35%;
+}
+.hrtag {
+  height: 2px;
+  border-width: 0;
+  color: gray;
+  background-color: gray;
+}
+.iconsetting {
+  padding: 10px;
+}
+.iconsdiv {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.footertext {
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 16px;
+}

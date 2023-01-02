@@ -1,12 +1,11 @@
 import React from "react";
-
 import arrowRight from "./../../Assets/arrowRight.svg";
 import arrowLeft from "./../../Assets/arrowLeft.svg";
 import Slider from "react-slick";
-import "./Style.css";
 
-const Brandslider = (props) => {
-  //   console.log(props, " received");
+const bannerslider = (props) => {
+  // console.log(props, "bannerslider");
+
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <button
       {...props}
@@ -36,39 +35,35 @@ const Brandslider = (props) => {
   );
 
   const settings = {
-    dots: false,
-    autoplay: true,
+    dots: true,
     infinite: true,
+    autoplay: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
   };
 
   return (
-    <div className="main_div">
-      <div className="brands">
-        <div className="brand_title">
-          <h1>{props?.data?.title}</h1>
-        </div>
-        <Slider {...settings}>
-          {props?.data?.brands?.map((brandslider, index) => (
+    <div className="mt-3">
+      <Slider {...settings}>
+        {props?.data?.slides?.map((sliderdata, index) => {
+          return (
             <div key={index}>
-              <div className="brand_section_top">
-                <img
-                  src={brandslider?.logo}
-                  className="brands_image"
-                  alt={brandslider?.handle}
-                />
-              </div>
+              {/* {console.log(sliderdata?.desktop_img,"imageslide")} */}
+              <img
+                src={sliderdata?.desktop_img}
+                alt={sliderdata?.banner_slider_alt_text}
+                style={{ width: "100%" }}
+              />
             </div>
-          ))}
-        </Slider>
-      </div>
+          );
+        })}
+      </Slider>
     </div>
   );
 };
 
-export default Brandslider;
+export default bannerslider;

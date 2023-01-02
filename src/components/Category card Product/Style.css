@@ -20,7 +20,7 @@
   font-weight: 400;
 }
 .product_title:hover {
-  color: coral;
+  color: orange;
 }
 .product_button {
   margin-bottom: 10px;
@@ -28,13 +28,17 @@
   letter-spacing: 1px;
   border: 1px solid #ebebeb;
   background-color: #fff;
+  margin-left: 3px;
 }
 
 .product_button:hover {
-  background-color: black;
+  background-color: orange;
   color: #ebebeb;
 }
 .brands_arrow {
   margin-top: -25px;
   width: 10px;
+}
+.main_div {
+  margin: 0px 30px;
 }
