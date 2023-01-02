@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "./Style.css";
 import arrowRight from "./../../Assets/arrowRight.svg";
 import arrowLeft from "./../../Assets/arrowLeft.svg";
+
+import { Link } from "react-router-dom";
+import Product from "../Products/Product";
+import { Alert } from "react-bootstrap";
+
 const CategoryCardproduct = (props) => {
+  const [datareceived, setdatareceived] = useState([]);
+
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <button
       {...props}
@@ -44,27 +51,55 @@ const CategoryCardproduct = (props) => {
     nextArrow: <SlickArrowRight />,
   };
 
+  const alertfunction = (event, item) => {
+    // console.log(item, "item");
+    // setdatareceived(item);
+    datareceived.unshift(item);
+    // console.log(datareceived, "local");
+    // console.log(datareceived, " data is here");
+    // const datareceived = [...item];
+    localStorage.setItem("cart", JSON.stringify(datareceived));
+    // console.log(props, "local");
+    alert("product", props?.type?.handle);
+  };
+
   return (
-    <div>
+    <div className="main_div">
+      {/* {console.log(props, "==================")} */}
       <Slider {...settings}>
         {props.type?.map((item, index) => (
           <div key={index}>
-            <div className="main_product_card">
-              <div>
-                <img src={item.image} width="100%" height="200px" />
+            <Link to={"/product/" + item?.handle}>
+              <div className="main_product_card">
+                <div>
+                  <img
+                    src={item.image}
+                    width="100%"
+                    height="200px"
+                    alt="categoryproductimage"
+                  />
+                </div>
+                <div>
+                  <p className="product_title">{item.title}</p>
+                </div>
+                <div>
+                  <p className="product_price">
+                    PKR: {item.price.original_price}
+                  </p>
+                </div>
+                <div>
+                  {/* {console.log(item,"handle")} */}
+                  {/* <Link to={`/product${"/"+item.handle}`}> */}
+
+                  <button
+                    className="product_button"
+                    onClick={(event) => alertfunction(event, item)}
+                  >
+                    BUY IT NOW
+                  </button>
+                </div>
               </div>
-              <div>
-                <p className="product_title">{item.title}</p>
-              </div>
-              <div>
-                <p className="product_price">
-                  PKR: {item.price.original_price}
-                </p>
-              </div>
-              <div>
-                <button className="product_button">BUY IT NOW</button>
-              </div>
-            </div>
+            </Link>
           </div>
         ))}
       </Slider>
